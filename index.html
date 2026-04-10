@@ -1,0 +1,1294 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>前原 利光 | 継続だけで人生を変えた男</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg:        #080808;
+      --bg2:       #111111;
+      --bg3:       #181818;
+      --gold:      #C9A84C;
+      --gold-dim:  #8a6e30;
+      --white:     #F5F5F5;
+      --gray:      #888888;
+      --gray-light:#BBBBBB;
+      --border:    rgba(201,168,76,0.2);
+      --font-jp:   'Noto Sans JP', sans-serif;
+      --font-en:   'Oswald', sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--white);
+      font-family: var(--font-jp);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ─── SCROLLBAR ─── */
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--gold-dim); border-radius: 2px; }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 60px;
+      background: rgba(8,8,8,0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      transition: padding .3s;
+    }
+    nav.scrolled { padding: 14px 60px; }
+    .nav-logo {
+      font-family: var(--font-en);
+      font-size: 1.1rem;
+      letter-spacing: 0.12em;
+      color: var(--gold);
+      text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 36px; list-style: none; }
+    .nav-links a {
+      color: var(--gray-light);
+      text-decoration: none;
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      font-weight: 500;
+      text-transform: uppercase;
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-cta {
+      background: transparent;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      padding: 9px 22px;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      cursor: pointer;
+      font-family: var(--font-jp);
+      font-weight: 700;
+      text-transform: uppercase;
+      transition: background .2s, color .2s;
+      text-decoration: none;
+    }
+    .nav-cta:hover { background: var(--gold); color: #000; }
+
+    /* ─── HERO ─── */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 120px 60px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-bg-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(201,168,76,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(201,168,76,0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+    }
+    .hero-bg-glow {
+      position: absolute;
+      top: -200px; right: -200px;
+      width: 700px; height: 700px;
+      background: radial-gradient(circle, rgba(201,168,76,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-tag {
+      font-family: var(--font-en);
+      font-size: 0.72rem;
+      letter-spacing: 0.3em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 28px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .hero-tag::before {
+      content: '';
+      display: inline-block;
+      width: 40px;
+      height: 1px;
+      background: var(--gold);
+    }
+    .hero-name {
+      font-family: var(--font-en);
+      font-size: clamp(3.5rem, 9vw, 8rem);
+      font-weight: 700;
+      line-height: 0.9;
+      letter-spacing: -0.02em;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+    .hero-name-jp {
+      font-size: clamp(1rem, 2.5vw, 1.5rem);
+      font-weight: 300;
+      letter-spacing: 0.3em;
+      color: var(--gray);
+      margin-bottom: 40px;
+    }
+    .hero-catch {
+      max-width: 640px;
+      font-size: clamp(1.3rem, 2.8vw, 2rem);
+      font-weight: 700;
+      line-height: 1.5;
+      margin-bottom: 16px;
+    }
+    .hero-catch span { color: var(--gold); }
+    .hero-sub {
+      color: var(--gray);
+      font-size: 0.92rem;
+      font-weight: 300;
+      max-width: 480px;
+      margin-bottom: 52px;
+    }
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 52px;
+    }
+    .badge {
+      border: 1px solid var(--border);
+      padding: 7px 18px;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      color: var(--gold);
+      background: rgba(201,168,76,0.05);
+    }
+    .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--gold);
+      color: #000;
+      padding: 15px 38px;
+      font-weight: 700;
+      font-size: 0.82rem;
+      letter-spacing: 0.12em;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: opacity .2s, transform .15s;
+      display: inline-block;
+    }
+    .btn-primary:hover { opacity: 0.85; transform: translateY(-2px); }
+    .btn-outline {
+      border: 1px solid rgba(255,255,255,0.2);
+      color: var(--white);
+      padding: 15px 38px;
+      font-size: 0.82rem;
+      letter-spacing: 0.12em;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: border-color .2s, color .2s;
+      display: inline-block;
+    }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+    .hero-scroll {
+      position: absolute;
+      bottom: 40px;
+      left: 60px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      color: var(--gray);
+      text-transform: uppercase;
+    }
+    .hero-scroll::before {
+      content: '';
+      display: inline-block;
+      width: 1px;
+      height: 50px;
+      background: linear-gradient(to bottom, transparent, var(--gray));
+      animation: scrollLine 1.8s ease-in-out infinite;
+    }
+    @keyframes scrollLine {
+      0%, 100% { transform: scaleY(0); transform-origin: top; }
+      50% { transform: scaleY(1); transform-origin: top; }
+    }
+
+    /* ─── NUMBERS ─── */
+    #numbers {
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 60px;
+    }
+    .numbers-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--border);
+    }
+    .number-item {
+      background: var(--bg2);
+      padding: 48px 40px;
+      text-align: center;
+    }
+    .number-val {
+      font-family: var(--font-en);
+      font-size: clamp(2.4rem, 4vw, 3.5rem);
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .number-unit {
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--gold-dim);
+    }
+    .number-label {
+      font-size: 0.75rem;
+      color: var(--gray);
+      letter-spacing: 0.05em;
+      margin-top: 6px;
+    }
+
+    /* ─── SECTION COMMONS ─── */
+    section { padding: 120px 60px; }
+    .section-tag {
+      font-family: var(--font-en);
+      font-size: 0.68rem;
+      letter-spacing: 0.3em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .section-tag::before {
+      content: '';
+      display: inline-block;
+      width: 28px;
+      height: 1px;
+      background: var(--gold);
+    }
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 60px;
+    }
+    .section-title em {
+      font-style: normal;
+      color: var(--gold);
+    }
+
+    /* ─── ABOUT ─── */
+    #about { background: var(--bg); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .about-body p {
+      color: var(--gray-light);
+      font-size: 0.95rem;
+      font-weight: 300;
+      line-height: 2;
+      margin-bottom: 22px;
+    }
+    .about-body p strong {
+      color: var(--white);
+      font-weight: 700;
+    }
+    .about-body p .highlight {
+      color: var(--gold);
+      font-weight: 700;
+    }
+    .about-side { display: flex; flex-direction: column; gap: 24px; }
+    .about-card {
+      border: 1px solid var(--border);
+      padding: 28px;
+      background: var(--bg3);
+      position: relative;
+      overflow: hidden;
+    }
+    .about-card::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 3px;
+      background: var(--gold);
+    }
+    .about-card-title {
+      font-family: var(--font-en);
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .about-card-body {
+      font-size: 0.88rem;
+      color: var(--gray-light);
+      line-height: 1.7;
+    }
+
+    /* ─── SKILLS ─── */
+    #skills { background: var(--bg2); }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: rgba(255,255,255,0.04);
+    }
+    .skill-item {
+      background: var(--bg2);
+      padding: 40px 36px;
+      transition: background .2s;
+    }
+    .skill-item:hover { background: var(--bg3); }
+    .skill-icon {
+      font-size: 1.6rem;
+      margin-bottom: 16px;
+      display: block;
+    }
+    .skill-name {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--white);
+    }
+    .skill-desc {
+      font-size: 0.8rem;
+      color: var(--gray);
+      line-height: 1.7;
+      font-weight: 300;
+    }
+    .skill-bar-wrap {
+      margin-top: 16px;
+      height: 2px;
+      background: rgba(255,255,255,0.06);
+    }
+    .skill-bar {
+      height: 100%;
+      background: linear-gradient(90deg, var(--gold-dim), var(--gold));
+      transition: width 1.2s ease;
+    }
+
+    /* ─── STORY ─── */
+    #story { background: var(--bg); }
+    .timeline {
+      position: relative;
+      padding-left: 40px;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 8px; bottom: 0;
+      width: 1px;
+      background: linear-gradient(to bottom, var(--gold), transparent);
+    }
+    .timeline-item {
+      position: relative;
+      padding: 0 0 56px 40px;
+    }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -4px; top: 8px;
+      width: 9px; height: 9px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 16px rgba(201,168,76,0.5);
+    }
+    .timeline-year {
+      font-family: var(--font-en);
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .timeline-head {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .timeline-body {
+      font-size: 0.88rem;
+      color: var(--gray-light);
+      font-weight: 300;
+      line-height: 1.8;
+      max-width: 560px;
+    }
+
+    /* ─── RESULTS ─── */
+    #results { background: var(--bg2); }
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2px;
+      background: rgba(255,255,255,0.04);
+    }
+    .result-item {
+      background: var(--bg2);
+      padding: 48px 44px;
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
+      transition: background .2s;
+    }
+    .result-item:hover { background: var(--bg3); }
+    .result-num {
+      font-family: var(--font-en);
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+      flex-shrink: 0;
+      letter-spacing: -0.03em;
+    }
+    .result-content {}
+    .result-title {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .result-desc {
+      font-size: 0.82rem;
+      color: var(--gray);
+      font-weight: 300;
+      line-height: 1.7;
+    }
+
+    /* ─── VISION ─── */
+    #vision {
+      background: var(--bg);
+      position: relative;
+      overflow: hidden;
+    }
+    .vision-bg {
+      position: absolute;
+      bottom: -200px; left: -200px;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(201,168,76,0.05) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .vision-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 2px;
+      background: rgba(255,255,255,0.04);
+    }
+    .vision-item {
+      background: var(--bg);
+      padding: 48px 36px;
+      border-top: 2px solid transparent;
+      transition: border-color .3s, background .2s;
+    }
+    .vision-item:hover {
+      border-top-color: var(--gold);
+      background: var(--bg3);
+    }
+    .vision-num {
+      font-family: var(--font-en);
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      color: var(--gold-dim);
+      margin-bottom: 20px;
+    }
+    .vision-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .vision-body {
+      font-size: 0.82rem;
+      color: var(--gray);
+      font-weight: 300;
+      line-height: 1.8;
+    }
+
+    /* ─── CONTACT ─── */
+    #contact { background: var(--bg3); }
+    .contact-wrap {
+      max-width: 640px;
+    }
+    .contact-lead {
+      font-size: 1rem;
+      color: var(--gray-light);
+      font-weight: 300;
+      line-height: 2;
+      margin-bottom: 48px;
+    }
+    .contact-items { display: flex; flex-direction: column; gap: 16px; margin-bottom: 52px; }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 20px 24px;
+      border: 1px solid var(--border);
+      background: var(--bg2);
+      text-decoration: none;
+      color: var(--white);
+      transition: border-color .2s, background .2s;
+    }
+    .contact-item:hover { border-color: var(--gold); background: var(--bg3); }
+    .contact-item-icon { font-size: 1.1rem; }
+    .contact-item-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      color: var(--gray);
+      text-transform: uppercase;
+      margin-bottom: 2px;
+    }
+    .contact-item-val {
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+    .contact-item-arrow {
+      margin-left: auto;
+      color: var(--gold);
+      font-size: 1.2rem;
+      transition: transform .2s;
+    }
+    .contact-item:hover .contact-item-arrow { transform: translateX(4px); }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--bg);
+      border-top: 1px solid var(--border);
+      padding: 40px 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .footer-logo {
+      font-family: var(--font-en);
+      font-size: 1rem;
+      letter-spacing: 0.12em;
+      color: var(--gold);
+    }
+    .footer-copy {
+      font-size: 0.72rem;
+      color: var(--gray);
+      letter-spacing: 0.08em;
+    }
+
+    /* ─── DAILY SCHEDULE ─── */
+    #daily { background: var(--bg2); }
+    .schedule-lead {
+      font-size: 0.92rem;
+      color: var(--gray);
+      font-weight: 300;
+      margin-bottom: 64px;
+      max-width: 560px;
+      line-height: 2;
+    }
+    .schedule-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+    .schedule-timeline { position: relative; }
+    .sch-row {
+      display: flex;
+      align-items: stretch;
+      gap: 0;
+      position: relative;
+    }
+    .sch-row:not(:last-child) .sch-line { flex: 1; background: var(--border); width: 1px; }
+    .sch-time-col {
+      width: 90px;
+      flex-shrink: 0;
+      padding: 4px 0 0;
+    }
+    .sch-time {
+      font-family: var(--font-en);
+      font-size: 0.72rem;
+      color: var(--gold);
+      letter-spacing: 0.06em;
+      font-weight: 600;
+      line-height: 1;
+    }
+    .sch-dot-col {
+      width: 28px;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .sch-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 12px rgba(201,168,76,0.5);
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+    .sch-dot.dim { background: var(--bg3); border: 1px solid var(--border); box-shadow: none; }
+    .sch-connector {
+      flex: 1;
+      width: 1px;
+      background: var(--border);
+      margin: 4px 0;
+      min-height: 28px;
+    }
+    .sch-body-col { flex: 1; padding: 0 0 32px 16px; }
+    .sch-label {
+      font-size: 0.92rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+      color: var(--white);
+    }
+    .sch-label.gold { color: var(--gold); }
+    .sch-note {
+      font-size: 0.78rem;
+      color: var(--gray);
+      font-weight: 300;
+      line-height: 1.6;
+    }
+    .sch-badge {
+      display: inline-block;
+      font-size: 0.62rem;
+      letter-spacing: 0.08em;
+      padding: 3px 10px;
+      border: 1px solid var(--border);
+      color: var(--gold);
+      background: rgba(201,168,76,0.06);
+      margin-top: 6px;
+    }
+
+    /* work days grid */
+    .workdays-wrap { display: flex; flex-direction: column; gap: 20px; }
+    .workdays-title {
+      font-family: var(--font-en);
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+    .workday-job { margin-bottom: 28px; }
+    .workday-job-name {
+      font-size: 0.82rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .workday-job-name::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+    .week-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 4px;
+    }
+    .week-day {
+      aspect-ratio: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      border: 1px solid transparent;
+      transition: transform .15s;
+    }
+    .week-day.work {
+      background: rgba(201,168,76,0.12);
+      border-color: rgba(201,168,76,0.3);
+      color: var(--gold);
+    }
+    .week-day.off {
+      background: rgba(255,255,255,0.03);
+      border-color: rgba(255,255,255,0.06);
+      color: var(--gray);
+      opacity: 0.5;
+    }
+    .week-day.rare {
+      background: rgba(201,168,76,0.04);
+      border-color: rgba(201,168,76,0.15);
+      color: var(--gold-dim);
+    }
+    .week-day-label { font-size: 0.55rem; margin-top: 2px; opacity: 0.7; }
+    .stat-row {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 32px;
+    }
+    .stat-box {
+      flex: 1;
+      min-width: 120px;
+      border: 1px solid var(--border);
+      padding: 20px 18px;
+      background: var(--bg);
+      text-align: center;
+    }
+    .stat-box-val {
+      font-family: var(--font-en);
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .stat-box-label {
+      font-size: 0.68rem;
+      color: var(--gray);
+      line-height: 1.4;
+    }
+
+    /* ─── ANIMATIONS ─── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 1024px) {
+      nav { padding: 18px 36px; }
+      #hero, section, footer { padding-left: 36px; padding-right: 36px; }
+      .numbers-grid { grid-template-columns: repeat(2, 1fr); }
+      .about-grid { grid-template-columns: 1fr; gap: 48px; }
+      .skills-grid { grid-template-columns: repeat(2, 1fr); }
+      .results-grid { grid-template-columns: 1fr; }
+      .vision-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      nav { padding: 16px 24px; }
+      .nav-links { display: none; }
+      #hero, section, footer { padding-left: 24px; padding-right: 24px; }
+      #hero { padding-top: 100px; }
+      .numbers-grid { grid-template-columns: repeat(2, 1fr); }
+      .skills-grid { grid-template-columns: 1fr; }
+      #numbers { padding: 40px 24px; }
+      .hero-scroll { left: 24px; }
+      footer { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ─── NAV ─── -->
+<nav id="main-nav">
+  <a href="#hero" class="nav-logo">MAEHARA</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#story">Story</a></li>
+    <li><a href="#results">Results</a></li>
+    <li><a href="#daily">Daily</a></li>
+    <li><a href="#vision">Vision</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Contact</a>
+</nav>
+
+<!-- ─── HERO ─── -->
+<section id="hero">
+  <div class="hero-bg-grid"></div>
+  <div class="hero-bg-glow"></div>
+
+  <div class="hero-tag">Triple Worker / Udon Master / Field Player</div>
+  <div class="hero-name">MAEHARA<br>TOSHIMITSU</div>
+  <div class="hero-name-jp">前原 利光</div>
+
+  <div class="hero-badges">
+    <span class="badge">トリプルワーカー</span>
+    <span class="badge">元うどん店長</span>
+    <span class="badge">副業年収200万円+</span>
+    <span class="badge">月収48万円</span>
+    <span class="badge">筋トレ歴16年</span>
+  </div>
+
+  <p class="hero-catch">継続だけで<span>人生を変えた</span>男。<br>副業年収<span>200万円</span>を積み上げた、<br>現場主義のリアル。</p>
+  <p class="hero-sub">飲食・配達・卸売──3つの仕事を掛け持ちしながら、<br>地に足をつけて収入と自己成長を積み上げ続けている。</p>
+
+  <div class="hero-btns">
+    <a href="#story" class="btn-primary">My Story</a>
+    <a href="#contact" class="btn-outline">Contact</a>
+  </div>
+
+  <div class="hero-scroll">Scroll</div>
+</section>
+
+<!-- ─── NUMBERS ─── -->
+<div id="numbers">
+  <div class="numbers-grid">
+    <div class="number-item fade-in">
+      <div class="number-val">200<span class="number-unit">万+</span></div>
+      <div class="number-label">副業年間収益</div>
+    </div>
+    <div class="number-item fade-in">
+      <div class="number-val">48<span class="number-unit">万</span></div>
+      <div class="number-label">月収（トリプルワーク）</div>
+    </div>
+    <div class="number-item fade-in">
+      <div class="number-val">3<span class="number-unit">年</span></div>
+      <div class="number-label">うどん店 店長経験</div>
+    </div>
+    <div class="number-item fade-in">
+      <div class="number-val">16<span class="number-unit">年+</span></div>
+      <div class="number-label">筋トレ継続歴</div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── ABOUT ─── -->
+<section id="about">
+  <div class="section-tag">About</div>
+  <div class="section-title">現場で生き、<br><em>継続で証明する。</em></div>
+  <div class="about-grid">
+    <div class="about-body fade-in">
+      <p>高校卒業後、飲食業界に飛び込み、全国チェーンのうどん店で<strong>店長を経験</strong>。さらに有名店での修行を重ね、調理技術・オペレーション・人材管理・売上管理を<strong>現場で徹底習得</strong>。</p>
+      <p>現在は<strong class="highlight">卵卸業</strong>に勤務しながら、<strong class="highlight">新聞配達・弁当配達</strong>を並行するトリプルワーカーとして活動中。副業においては<strong class="highlight">年間200万円以上</strong>の収益を継続して達成し、月収約48万円を実現。</p>
+      <p>過去には約190万円の借金を抱え、任意整理を経て完済。その経験から「<strong>継続」と「行動」</strong>の重要性を体感し、人生を立て直した。</p>
+      <p>現在は「<strong class="highlight">食で人を支える</strong>」という想いを軸に、将来的なうどん事業や炊き出し活動に向けて着実に準備を進めている。</p>
+    </div>
+    <div class="about-side fade-in">
+      <div class="about-card">
+        <div class="about-card-title">Philosophy</div>
+        <div class="about-card-body">「行動しなければ何も変わらない」──借金完済も、副業収入も、全ては<strong style="color:var(--white)">現場での継続</strong>から生まれた。</div>
+      </div>
+      <div class="about-card">
+        <div class="about-card-title">Body & Mind</div>
+        <div class="about-card-body">筋トレ歴16年以上。体重45kgから77kgへ増量。ハードな肉体労働と自己管理が重なり、<strong style="color:var(--white)">精神的な強さ</strong>も培ってきた。</div>
+      </div>
+      <div class="about-card">
+        <div class="about-card-title">Mission</div>
+        <div class="about-card-body">食を通じて人を支える。将来的にはうどん事業・炊き出し活動で、<strong style="color:var(--white)">社会に貢献</strong>することが目標。</div>
+      </div>
+      <div class="about-card">
+        <div class="about-card-title">Comeback Story</div>
+        <div class="about-card-body">約190万円の借金を任意整理で完済。どん底から自力で這い上がった実体験が、今の<strong style="color:var(--white)">行動力の源泉</strong>。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SKILLS ─── -->
+<section id="skills">
+  <div class="section-tag">Skills</div>
+  <div class="section-title">現場が育てた、<br><em>6つの武器。</em></div>
+  <div class="skills-grid">
+    <div class="skill-item fade-in">
+      <span class="skill-icon">🍜</span>
+      <div class="skill-name">うどん製麺・調理技術</div>
+      <div class="skill-desc">有名店での修行経験。製麺から仕上げまで、本格的な技術を現場で習得。</div>
+      <div class="skill-bar-wrap"><div class="skill-bar" data-width="92%"></div></div>
+    </div>
+    <div class="skill-item fade-in">
+      <span class="skill-icon">🏪</span>
+      <div class="skill-name">飲食店運営・オペレーション</div>
+      <div class="skill-desc">店長として店舗全体を管理。現場改善・QSC向上を実践的に推進。</div>
+      <div class="skill-bar-wrap"><div class="skill-bar" data-width="88%"></div></div>
+    </div>
+    <div class="skill-item fade-in">
+      <span class="skill-icon">👥</span>
+      <div class="skill-name">人材管理・スタッフ教育</div>
+      <div class="skill-desc">採用・育成・シフト管理まで一貫して担当。現場のチームビルディングに強み。</div>
+      <div class="skill-bar-wrap"><div class="skill-bar" data-width="85%"></div></div>
+    </div>
+    <div class="skill-item fade-in">
+      <span class="skill-icon">📊</span>
+      <div class="skill-name">売上・コスト管理</div>
+      <div class="skill-desc">日次売上管理・原価・人件費コントロールを店長として実施。数字に強い現場感覚。</div>
+      <div class="skill-bar-wrap"><div class="skill-bar" data-width="80%"></div></div>
+    </div>
+    <div class="skill-item fade-in">
+      <span class="skill-icon">💰</span>
+      <div class="skill-name">複業による収入構築</div>
+      <div class="skill-desc">本業＋副業の収入源を組み合わせ、年間200万円超の副業収益を継続達成。</div>
+      <div class="skill-bar-wrap"><div class="skill-bar" data-width="90%"></div></div>
+    </div>
+    <div class="skill-item fade-in">
+      <span class="skill-icon">💪</span>
+      <div class="skill-name">継続力・体力・自己管理</div>
+      <div class="skill-desc">16年以上の筋トレ歴、トリプルワーク継続中。ハードな環境でも折れない意志力。</div>
+      <div class="skill-bar-wrap"><div class="skill-bar" data-width="96%"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── STORY ─── -->
+<section id="story">
+  <div class="section-tag">Story</div>
+  <div class="section-title">どん底から、<br><em>積み上げた軌跡。</em></div>
+  <div class="timeline">
+    <div class="timeline-item fade-in">
+      <div class="timeline-year">Start</div>
+      <div class="timeline-head">飲食業界へ。うどん店でのキャリアスタート</div>
+      <div class="timeline-body">高校卒業後、飲食業界に飛び込む。全国チェーンのうどん店に入社し、調理から接客まで現場の基礎を徹底的に叩き込まれた。</div>
+    </div>
+    <div class="timeline-item fade-in">
+      <div class="timeline-year">店長就任</div>
+      <div class="timeline-head">うどん店 店長として店舗を任される</div>
+      <div class="timeline-body">3年間、店長として売上管理・人材管理・オペレーション改善を現場で実践。さらに有名店での修行を経て、本格的な製麺・調理技術を習得。</div>
+    </div>
+    <div class="timeline-item fade-in">
+      <div class="timeline-year">試練</div>
+      <div class="timeline-head">約190万円の借金。任意整理という決断</div>
+      <div class="timeline-body">人生のどん底とも言える状況に直面。しかし逃げずに向き合い、任意整理という手続きを経て<strong style="color:var(--white)">全額完済</strong>。この経験が「行動と継続」の哲学を生んだ。</div>
+    </div>
+    <div class="timeline-item fade-in">
+      <div class="timeline-year">再起</div>
+      <div class="timeline-head">トリプルワーク開始。収入を積み上げていく</div>
+      <div class="timeline-body">卵卸業・新聞配達・弁当配達を掛け持ちするトリプルワーカーへ。副業でも年間200万円以上の収益を達成し、月収48万円を実現。</div>
+    </div>
+    <div class="timeline-item fade-in">
+      <div class="timeline-year">Now</div>
+      <div class="timeline-head">現在進行形。食と人を繋ぐ活動へ</div>
+      <div class="timeline-body">「食で人を支える」という想いのもと、将来的なうどん事業・炊き出し活動に向けて着実に準備中。継続の力で、次のステージへ。</div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── RESULTS ─── -->
+<section id="results">
+  <div class="section-tag">Results</div>
+  <div class="section-title">数字が証明する、<br><em>継続の力。</em></div>
+  <div class="results-grid">
+    <div class="result-item fade-in">
+      <div class="result-num">01</div>
+      <div class="result-content">
+        <div class="result-title">副業で年間200万円以上の収益を継続達成</div>
+        <div class="result-desc">本業と並行しながら副業収入を積み上げ、年間200万円超の収益を継続。一度きりではなく、毎年継続していることが強み。</div>
+      </div>
+    </div>
+    <div class="result-item fade-in">
+      <div class="result-num">02</div>
+      <div class="result-content">
+        <div class="result-title">トリプルワークで月収約48万円を達成</div>
+        <div class="result-desc">卵卸業・新聞配達・弁当配達の3本柱で安定した収入構造を確立。体力と継続力で実現した現場主義の成果。</div>
+      </div>
+    </div>
+    <div class="result-item fade-in">
+      <div class="result-num">03</div>
+      <div class="result-content">
+        <div class="result-title">うどん店 店長として売上・人材管理を担当</div>
+        <div class="result-desc">3年間の店長経験を通じ、売上向上・スタッフ育成・コスト管理を実践。有名店での修行も経て、技術と経営の両面を習得。</div>
+      </div>
+    </div>
+    <div class="result-item fade-in">
+      <div class="result-num">04</div>
+      <div class="result-content">
+        <div class="result-title">筋トレ16年で体重45kg → 77kgへ増量</div>
+        <div class="result-desc">継続の象徴。16年間、毎日トレーニングを続け体重を32kg増量。この継続力と自己管理力が全ての基盤になっている。</div>
+      </div>
+    </div>
+    <div class="result-item fade-in">
+      <div class="result-num">05</div>
+      <div class="result-content">
+        <div class="result-title">190万円の借金を任意整理で完済</div>
+        <div class="result-desc">どん底から逃げずに向き合い、計画的に完済。その経験が「行動すれば変わる」という揺るぎない信念の根拠となっている。</div>
+      </div>
+    </div>
+    <div class="result-item fade-in">
+      <div class="result-num">06</div>
+      <div class="result-content">
+        <div class="result-title">新聞配達で安定収入を長期継続</div>
+        <div class="result-desc">早朝から始まるハードな業務を休まず継続。安定した収入の柱として機能させながら、生活リズムの自己管理も実現。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── DAILY SCHEDULE ─── -->
+<section id="daily">
+  <div class="section-tag">Daily Schedule</div>
+  <div class="section-title">深夜1時から始まる、<br><em>限界突破の一日。</em></div>
+  <p class="schedule-lead">
+    眠っている時間も惜しい。深夜1時20分に起き出し、3つの仕事をこなしながら午後4時半まで駆け抜ける。
+    これが前原利光の、休むことなく積み上げる「現場主義の一日」だ。
+  </p>
+  <div class="schedule-wrap">
+    <!-- タイムライン -->
+    <div class="schedule-timeline fade-in">
+      <!-- 1:20 -->
+      <div class="sch-row">
+        <div class="sch-time-col"><div class="sch-time">01:20</div></div>
+        <div class="sch-dot-col"><div class="sch-dot"></div><div class="sch-connector"></div></div>
+        <div class="sch-body-col">
+          <div class="sch-label gold">起床・出発準備</div>
+          <div class="sch-note">深夜に目覚め、新聞配達へ向かう準備。世間はまだ眠っている。</div>
+        </div>
+      </div>
+      <!-- 1:45 -->
+      <div class="sch-row">
+        <div class="sch-time-col"><div class="sch-time">01:45</div></div>
+        <div class="sch-dot-col"><div class="sch-dot"></div><div class="sch-connector"></div></div>
+        <div class="sch-body-col">
+          <div class="sch-label">新聞配達 開始</div>
+          <div class="sch-note">暗闇の中、黙々と配達ルートをこなす。天候・季節問わず継続。</div>
+          <span class="sch-badge">月1回 休館日のみ休み</span>
+        </div>
+      </div>
+      <!-- 4:30 -->
+      <div class="sch-row">
+        <div class="sch-time-col"><div class="sch-time">04:30</div></div>
+        <div class="sch-dot-col"><div class="sch-dot"></div><div class="sch-connector"></div></div>
+        <div class="sch-body-col">
+          <div class="sch-label">新聞配達 終了</div>
+          <div class="sch-note">約2時間45分の配達を完了。疲れていても次の準備へ。</div>
+        </div>
+      </div>
+      <!-- 4:40 -->
+      <div class="sch-row">
+        <div class="sch-time-col"><div class="sch-time">04:40</div></div>
+        <div class="sch-dot-col"><div class="sch-dot dim"></div><div class="sch-connector"></div></div>
+        <div class="sch-body-col">
+          <div class="sch-label">一時帰宅 — 朝食・仮眠</div>
+          <div class="sch-note">自宅に戻り、朝食をとる。仮眠は<strong style="color:var(--white)">わずか15分程度</strong>。それでもまた立ち上がる。</div>
+        </div>
+      </div>
+      <!-- 5:30 -->
+      <div class="sch-row">
+        <div class="sch-time-col"><div class="sch-time">05:30</div></div>
+        <div class="sch-dot-col"><div class="sch-dot"></div><div class="sch-connector"></div></div>
+        <div class="sch-body-col">
+          <div class="sch-label">弁当配達 開始</div>
+          <div class="sch-note">15分の仮眠を経て、すぐさま弁当配達へ出発。</div>
+          <span class="sch-badge">土日休み</span>
+        </div>
+      </div>
+      <!-- 7:00 -->
+      <div class="sch-row">
+        <div class="sch-time-col"><div class="sch-time">07:00</div></div>
+        <div class="sch-dot-col"><div class="sch-dot"></div><div class="sch-connector"></div></div>
+        <div class="sch-body-col">
+          <div class="sch-label">弁当配達 終了・本業へ移動</div>
+          <div class="sch-note">配達を終え、そのまま本業（卵卸業）の職場へ移動。</div>
+        </div>
+      </div>
+      <!-- 7:30 -->
+      <div class="sch-row">
+        <div class="sch-time-col"><div class="sch-time">07:30</div></div>
+        <div class="sch-dot-col"><div class="sch-dot"></div><div class="sch-connector"></div></div>
+        <div class="sch-body-col">
+          <div class="sch-label">本業（卵卸業）開始</div>
+          <div class="sch-note">起床から6時間以上が経過しているが、本業はここからが本番。</div>
+          <span class="sch-badge">日曜のみ休み</span>
+        </div>
+      </div>
+      <!-- 16:30 -->
+      <div class="sch-row">
+        <div class="sch-time-col"><div class="sch-time">16:30</div></div>
+        <div class="sch-dot-col"><div class="sch-dot gold" style="background:var(--gold);box-shadow:0 0 20px rgba(201,168,76,0.7);"></div></div>
+        <div class="sch-body-col">
+          <div class="sch-label gold">本業 終了 — 一日の完了</div>
+          <div class="sch-note">起床から約15時間。この積み重ねが、月収48万円と副業年収200万円を作り上げる。</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 稼働日グリッド & 統計 -->
+    <div class="fade-in">
+      <div class="workdays-title">Weekly Work Pattern</div>
+
+      <div class="workday-job">
+        <div class="workday-job-name">📰 新聞配達</div>
+        <div class="week-grid">
+          <div class="week-day work"><span>月</span><span class="week-day-label">稼働</span></div>
+          <div class="week-day work"><span>火</span><span class="week-day-label">稼働</span></div>
+          <div class="week-day work"><span>水</span><span class="week-day-label">稼働</span></div>
+          <div class="week-day work"><span>木</span><span class="week-day-label">稼働</span></div>
+          <div class="week-day work"><span>金</span><span class="week-day-label">稼働</span></div>
+          <div class="week-day work"><span>土</span><span class="week-day-label">稼働</span></div>
+          <div class="week-day work"><span>日</span><span class="week-day-label">稼働</span></div>
+        </div>
+        <div style="font-size:0.68rem;color:var(--gray);margin-top:8px;">※ 月1回の休館日のみ休み（ほぼ年中無休）</div>
+      </div>
+
+      <div class="workday-job">
+        <div class="workday-job-name">🍱 弁当配達</div>
+        <div class="week-grid">
+          <div class="week-day work"><span>月</span><span class="week-day-label">稼働</span></div>
+          <div class="week-day work"><span>火</span><span class="week-day-label">稼働</span></div>
+          <div class="week-day work"><span>水</span><span class="week-day-label">稼働</span></div>
+          <div class="week-day work"><span>木</span><span class="week-day-label">稼働</span></div>
+          <div class="week-day work"><span>金</span><span class="week-day-label">稼働</span></div>
+          <div class="week-day off"><span>土</span><span class="week-day-label">休み</span></div>
+          <div class="week-day off"><span>日</span><span class="week-day-label">休み</span></div>
+        </div>
+      </div>
+
+      <div class="workday-job">
+        <div class="workday-job-name">🥚 本業（卵卸）</div>
+        <div class="week-grid">
+          <div class="week-day work"><span>月</span><span class="week-day-label">稼働</span></div>
+          <div class="week-day work"><span>火</span><span class="week-day-label">稼働</span></div>
+          <div class="week-day work"><span>水</span><span class="week-day-label">稼働</span></div>
+          <div class="week-day work"><span>木</span><span class="week-day-label">稼働</span></div>
+          <div class="week-day work"><span>金</span><span class="week-day-label">稼働</span></div>
+          <div class="week-day work"><span>土</span><span class="week-day-label">稼働</span></div>
+          <div class="week-day off"><span>日</span><span class="week-day-label">休み</span></div>
+        </div>
+      </div>
+
+      <div class="stat-row">
+        <div class="stat-box">
+          <div class="stat-box-val">~15h</div>
+          <div class="stat-box-label">1日の<br>稼働時間</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-box-val">364</div>
+          <div class="stat-box-label">新聞配達<br>年間稼働日</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-box-val">3</div>
+          <div class="stat-box-label">同時並行<br>仕事数</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── VISION ─── -->
+<section id="vision">
+  <div class="vision-bg"></div>
+  <div class="section-tag">Vision</div>
+  <div class="section-title">次に目指す、<br><em>3つの景色。</em></div>
+  <div class="vision-grid">
+    <div class="vision-item fade-in">
+      <div class="vision-num">01 — Udon Business</div>
+      <div class="vision-title">うどん事業の立ち上げ</div>
+      <div class="vision-body">修行で培った製麺技術と店長経験を活かし、自分の店を持つことが夢。本物の味と温かいサービスで、地域に愛される店を作りたい。</div>
+    </div>
+    <div class="vision-item fade-in">
+      <div class="vision-num">02 — Social</div>
+      <div class="vision-title">炊き出し・食支援活動</div>
+      <div class="vision-body">「食で人を支える」という想いを形に。炊き出し活動を通じて、困っている人に温かい食事を届けたい。かつての自分のような人を支えるために。</div>
+    </div>
+    <div class="vision-item fade-in">
+      <div class="vision-num">03 — Collab</div>
+      <div class="vision-title">コラボ・仕事の機会創出</div>
+      <div class="vision-body">現場力・継続力・複業ノウハウを活かし、飲食事業や副業構築に関わる新たなコラボレーションや仕事の機会を広げていきたい。</div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CONTACT ─── -->
+<section id="contact">
+  <div class="section-tag">Contact</div>
+  <div class="section-title">一緒に、<em>何かを作ろう。</em></div>
+  <div class="contact-wrap fade-in">
+    <p class="contact-lead">仕事のご依頼・コラボのご相談・メディア取材など、お気軽にご連絡ください。<br>現場主義で誠実に対応します。</p>
+    <div class="contact-items">
+      <a class="contact-item" href="mailto:contact@example.com">
+        <span class="contact-item-icon">✉</span>
+        <div>
+          <div class="contact-item-label">Email</div>
+          <div class="contact-item-val">contact@example.com</div>
+        </div>
+        <span class="contact-item-arrow">→</span>
+      </a>
+      <a class="contact-item" href="https://twitter.com/" target="_blank" rel="noopener">
+        <span class="contact-item-icon">𝕏</span>
+        <div>
+          <div class="contact-item-label">X (Twitter)</div>
+          <div class="contact-item-val">@your_handle</div>
+        </div>
+        <span class="contact-item-arrow">→</span>
+      </a>
+      <a class="contact-item" href="https://instagram.com/" target="_blank" rel="noopener">
+        <span class="contact-item-icon">◎</span>
+        <div>
+          <div class="contact-item-label">Instagram</div>
+          <div class="contact-item-val">@your_handle</div>
+        </div>
+        <span class="contact-item-arrow">→</span>
+      </a>
+    </div>
+    <a href="mailto:contact@example.com" class="btn-primary">メッセージを送る</a>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <span class="footer-logo">MAEHARA TOSHIMITSU</span>
+  <span class="footer-copy">© 2026 前原 利光 — 継続だけで人生を変えた男</span>
+</footer>
+
+<script>
+  // Nav scroll effect
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 50);
+  });
+
+  // Fade-in on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, 80 * (entry.target.dataset.delay || 0));
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.fade-in').forEach((el, i) => {
+    el.dataset.delay = i % 4;
+    observer.observe(el);
+  });
+
+  // Skill bars animate on scroll
+  const barObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.querySelectorAll('.skill-bar').forEach(bar => {
+          bar.style.width = bar.dataset.width;
+        });
+        barObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  document.querySelectorAll('.skills-grid').forEach(el => barObserver.observe(el));
+
+  // Number counter animation
+  const numObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        numObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  document.querySelectorAll('.number-item').forEach(el => numObserver.observe(el));
+</script>
+</body>
+</html>
